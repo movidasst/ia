@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Movida SST - Hub de Innovación Preventiva</title>
+    
+    <!-- Etiquetas Open Graph para Redes Sociales (SEO) -->
+    <meta property="og:title" content="IA Movida SST - Hub de Innovación Preventiva">
+    <meta property="og:description" content="Explora, utiliza y comparte aplicaciones web y estudios creados con Inteligencia Artificial por talento venezolano y latinoamericano.">
+    <meta property="og:image" content="https://assets.poap.xyz/7a0347ca-c7eb-4842-b5f5-b72c364b1fff.png">
+    <meta property="og:url" content="https://ia.movidasst.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS para el diseño -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            light: '#F8FAFC',
+                            card: '#FFFFFF',
+                            primary: '#10B981',
+                            primaryHover: '#059669',
+                            accent: '#3B82F6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+            background-image: radial-gradient(circle at top right, rgba(16, 185, 129, 0.08), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.08), transparent 40%);
+            color: #0F172A;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 12px 25px -5px rgba(16, 185, 129, 0.15), 0 8px 10px -6px rgba(16, 185, 129, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .vzla-border {
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(90deg, #FFCC00 33.3%, #0033A0 33.3%, #0033A0 66.6%, #EF3340 66.6%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Animación de flotación para el logo */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .logo-glow {
+            filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.2));
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <nav class="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-3">
+                        <span class="font-bold text-xl tracking-tight text-slate-900">IA <span class="text-brand-primary">Movida</span>SST</span>
+                    </div>
+                    <a href="https://www.movidasst.com" class="hidden md:flex items-center text-sm font-medium text-slate-500 hover:text-brand-primary transition-colors">
+                        <i class="fa-solid fa-arrow-left mr-1.5"></i> Volver a movidasst.com
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://www.movidasst.com" class="md:hidden flex items-center justify-center p-2 text-slate-500 hover:text-brand-primary rounded-lg transition-colors" title="Volver a movidasst.com">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                    <a href="https://forms.gle/KMscvqWV6cWmC2xf9" target="_blank" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-brand-primary hover:bg-brand-primaryHover shadow-sm rounded-lg transition-colors">
+                        <i class="fa-solid fa-plus mr-2"></i> Aporta tu Proyecto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-16 pb-12 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <!-- Logo Grande con Efecto -->
+            <div class="mb-8 flex justify-center">
+                <img src="https://assets.poap.xyz/7a0347ca-c7eb-4842-b5f5-b72c364b1fff.png" 
+                     alt="Logo IA Movida SST" 
+                     class="h-40 md:h-56 w-auto animate-float logo-glow object-contain"
+                     onerror="this.style.display='none'">
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primaryHover text-sm font-medium mb-6 border border-brand-primary/20">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+                </span>
+                Impulsado por la comunidad
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
+                El Hub de Innovación en <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Seguridad y Salud en el Trabajo</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Explora, utiliza y comparte aplicaciones web y estudios creados con Inteligencia Artificial por talento venezolano y latinoamericano.
+            </p>
+            <a href="#directorio" class="inline-flex items-center text-slate-500 hover:text-brand-primary font-medium transition-colors">
+                Explorar directorio <i class="fa-solid fa-arrow-down ml-2 animate-bounce"></i>
+            </a>
+        </div>
+    </header>
+
+    <main id="directorio" class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        
+        <section class="mb-10 bg-white/80 p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-4 backdrop-blur-sm">
+            <div class="relative flex-grow">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-search text-slate-400"></i>
+                </div>
+                <input type="text" id="searchInput" placeholder="Buscar por título, autor o palabra clave..." 
+                    class="block w-full pl-10 pr-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-colors">
+            </div>
+            
+            <div class="w-full md:w-48">
+                <select id="tipoFilter" class="block w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 focus:outline-none focus:bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary appearance-none cursor-pointer">
+                    <option value="todos">Todos los Tipos</option>
+                    <option value="app">Aplicación Web (Gemini)</option>
+                    <option value="estudio">Estudio (NotebookLM)</option>
+                </select>
+            </div>
+
+            <div class="w-full md:w-48">
+                <select id="categoriaFilter" class="block w-full px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-700 focus:outline-none focus:bg-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary appearance-none cursor-pointer">
+                    <option value="todos">Todas las Categorías</option>
+                </select>
+            </div>
+        </section>
+
+        <div id="loadingState" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10 w-full">
+            <div class="glass-card rounded-2xl p-6 h-64 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between mb-4">
+                        <div class="h-6 w-20 bg-slate-200 rounded-md skeleton"></div>
+                        <div class="h-6 w-24 bg-slate-200 rounded-md skeleton"></div>
+                    </div>
+                    <div class="h-6 w-3/4 bg-slate-200 rounded skeleton mb-3"></div>
+                    <div class="h-4 w-full bg-slate-200 rounded skeleton mb-2"></div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3 text-slate-200">
+                        <div class="h-8 w-8 rounded-full bg-slate-200 skeleton"></div>
+                        <div class="h-4 w-24 bg-slate-200 rounded skeleton"></div>
+                    </div>
+                    <div class="h-8 w-28 bg-slate-200 rounded-lg skeleton"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyState" class="hidden flex-col items-center justify-center py-20 text-center">
+            <div class="bg-slate-100 rounded-full p-6 mb-4">
+                <i id="emptyStateIcon" class="fa-solid fa-folder-open text-4xl text-slate-400"></i>
+            </div>
+            <h3 id="emptyStateTitle" class="text-xl font-bold text-slate-800 mb-2">No se encontraron proyectos</h3>
+            <p id="emptyStateDesc" class="text-slate-500 max-w-md mx-auto">Prueba ajustando los filtros de búsqueda o sé el primero en aportar una herramienta.</p>
+            <button id="retryButton" onclick="fetchProyectos()" class="hidden mt-6 px-5 py-2.5 bg-brand-primary hover:bg-brand-primaryHover text-white text-sm font-medium rounded-lg transition-colors shadow-sm">
+                <i class="fa-solid fa-rotate-right mr-2"></i>Reintentar Conexión
+            </button>
+        </div>
+
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"></div>
+
+    </main>
+
+    <footer class="border-t border-slate-200 bg-slate-50 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 text-sm font-medium">© 2026 La Movida de SST. Proyecto impulsado por la comunidad.</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-400 hover:text-brand-primary transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brand-primary transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const API_URL = "https://script.google.com/macros/s/AKfycby7MfeONoek7IfWYPtVNTabG9QeQO6GGkjZki3G_t5hgHeMPgT5xX2UK6nYqjXLOuYvXQ/exec";
+        
+        let proyectosGlobales = [];
+
+        const grid = document.getElementById('projectsGrid');
+        const loadingState = document.getElementById('loadingState');
+        const emptyState = document.getElementById('emptyState');
+        const searchInput = document.getElementById('searchInput');
+        const tipoFilter = document.getElementById('tipoFilter');
+        const categoriaFilter = document.getElementById('categoriaFilter');
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Función para optimizar enlaces de Drive y hacerlos visibles
+        function formatDriveUrl(url) {
+            if (!url) return '';
+            const driveMatch = url.match(/(?:drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=|uc\?export=view&id=)|docs\.google\.com\/file\/d\/)([a-zA-Z0-9_-]+)/);
+            if (driveMatch && driveMatch[1]) {
+                return `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
+            }
+            return url;
+        }
+
+        function isValidProjectURL(urlString) {
+            if (!urlString) return false;
+            try {
+                const url = new URL(urlString);
+                const hostname = url.hostname.toLowerCase();
+                const dominiosPermitidos = ['gemini.google.com', 'notebooklm.google.com', 'github.com', 'movidasst.com'];
+                return dominiosPermitidos.some(domain => hostname === domain || hostname.endsWith('.' + domain));
+            } catch (e) { return false; }
+        }
+
+        function isValidLinkedInURL(urlString) {
+            if (!urlString) return false;
+            try {
+                const url = new URL(urlString);
+                const hostname = url.hostname.toLowerCase();
+                return hostname === 'linkedin.com' || hostname.endsWith('.linkedin.com');
+            } catch (e) { return false; }
+        }
+
+        async function fetchProyectos() {
+            try {
+                loadingState.classList.remove('hidden');
+                grid.classList.add('hidden');
+                emptyState.classList.add('hidden');
+                emptyState.classList.remove('flex');
+
+                const response = await fetch(API_URL, { method: 'GET', redirect: 'follow' });
+                if (!response.ok) throw new Error('Error en la red');
+                
+                const data = await response.json();
+                proyectosGlobales = data.reverse(); 
+                
+                poblarCategorias(proyectosGlobales);
+                renderizarProyectos(proyectosGlobales);
+            } catch (error) {
+                console.error("Error:", error);
+                mostrarError();
+            } finally {
+                loadingState.classList.add('hidden');
+            }
+        }
+
+        function renderizarProyectos(proyectos) {
+            grid.innerHTML = '';
+
+            if (proyectos.length === 0) {
+                grid.classList.add('hidden');
+                document.getElementById('emptyStateIcon').className = "fa-solid fa-folder-open text-4xl text-slate-400";
+                document.getElementById('emptyStateTitle').textContent = "No se encontraron proyectos";
+                document.getElementById('retryButton').classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.classList.remove('hidden');
+
+            proyectos.forEach((p, index) => {
+                const tituloSeguro = escapeHTML(p.titulo || 'Sin Título');
+                const autorSeguro = escapeHTML(p.autor || 'Anónimo');
+                const categoriaSegura = escapeHTML(p.categoria || 'General');
+                const descripcionSegura = escapeHTML(p.descripcion || 'Explora este proyecto de la comunidad.');
+                
+                const rawFotoUrl = p.foto ? p.foto.trim() : '';
+                const fotoUrlFinal = formatDriveUrl(rawFotoUrl);
+
+                const enlaceValido = isValidProjectURL(p.url);
+                const linkedinValido = isValidLinkedInURL(p.linkedin);
+
+                let avatarSrc = `https://ui-avatars.com/api/?name=${encodeURIComponent(autorSeguro)}&background=0F172A&color=fff&bold=true&size=64`;
+                if (fotoUrlFinal && (fotoUrlFinal.startsWith('http'))) {
+                    avatarSrc = fotoUrlFinal;
+                }
+
+                const urlDestino = enlaceValido ? encodeURI(p.url) : '#';
+                const esApp = (p.tipo || '').toLowerCase().includes('app');
+                const esNuevo = index < 3 ? `<div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-lg z-10 shadow-sm animate-pulse tracking-wide">NUEVO</div>` : '';
+
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl relative overflow-hidden flex flex-col h-full';
+                card.innerHTML = `
+                    <div class="vzla-border"></div>
+                    ${esNuevo}
+                    <div class="p-6 flex flex-col flex-grow mt-2">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-200">
+                                <i class="fa-solid fa-tag text-slate-400"></i> ${categoriaSegura}
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold ${esApp ? 'text-blue-600 bg-blue-50' : 'text-purple-600 bg-purple-50'} border border-current border-opacity-10">
+                                <i class="fa-solid ${esApp ? 'fa-code' : 'fa-book-open'}"></i> ${esApp ? 'Web App' : 'Estudio'}
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight line-clamp-2">${tituloSeguro}</h3>
+                        <p class="text-sm text-slate-600 mb-2 line-clamp-2">${descripcionSegura}</p>
+                        <div class="flex-grow"></div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col gap-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <img src="${avatarSrc}" class="h-10 w-10 rounded-full object-cover shadow-sm border border-slate-200" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(autorSeguro)}&background=0F172A&color=fff&bold=true'">
+                                    <div class="flex flex-col">
+                                        <span class="text-sm font-semibold text-slate-700 line-clamp-1">${autorSeguro}</span>
+                                        ${linkedinValido ? `<a href="${encodeURI(p.linkedin)}" target="_blank" class="text-xs font-medium text-brand-primary hover:text-brand-primaryHover flex items-center gap-1"><i class="fa-brands fa-linkedin"></i> Perfil</a>` : ''}
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="${urlDestino}" target="${enlaceValido ? '_blank' : '_self'}" class="w-full inline-flex items-center justify-center px-4 py-2 border text-sm font-semibold rounded-lg transition-all shadow-sm group ${enlaceValido ? 'bg-white hover:bg-slate-50 border-slate-300 text-slate-700' : 'bg-slate-100 text-slate-400 cursor-not-allowed'}">
+                                ${enlaceValido ? 'Abrir Proyecto' : 'Enlace no verificado'}
+                                <i class="fa-solid ${enlaceValido ? 'fa-arrow-up-right-from-square' : 'fa-lock'} ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function poblarCategorias(proyectos) {
+            const categoriasUnicas = [...new Set(proyectos.map(p => escapeHTML(p.categoria)).filter(c => c))].sort();
+            categoriaFilter.innerHTML = '<option value="todos">Todas las Categorías</option>';
+            categoriasUnicas.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                categoriaFilter.appendChild(option);
+            });
+        }
+
+        function aplicarFiltros() {
+            const textoBuscado = searchInput.value.toLowerCase();
+            const tipoSeleccionado = tipoFilter.value;
+            const catSeleccionada = categoriaFilter.value;
+
+            const filtrados = proyectosGlobales.filter(p => {
+                const tituloAutor = `${p.titulo} ${p.autor} ${p.categoria}`.toLowerCase();
+                const cumpleTexto = textoBuscado === '' || tituloAutor.includes(textoBuscado);
+                let cumpleTipo = true;
+                if (tipoSeleccionado === 'app') cumpleTipo = (p.tipo || '').toLowerCase().includes('app');
+                if (tipoSeleccionado === 'estudio') cumpleTipo = (p.tipo || '').toLowerCase().includes('estudio') || !(p.tipo || '').toLowerCase().includes('app');
+                const cumpleCat = catSeleccionada === 'todos' || escapeHTML(p.categoria) === catSeleccionada;
+                return cumpleTexto && cumpleTipo && cumpleCat;
+            });
+            renderizarProyectos(filtrados);
+        }
+
+        let debounceTimer;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => aplicarFiltros(), 300);
+        });
+        tipoFilter.addEventListener('change', aplicarFiltros);
+        categoriaFilter.addEventListener('change', aplicarFiltros);
+
+        function mostrarError() {
+            grid.classList.add('hidden');
+            document.getElementById('emptyStateIcon').className = "fa-solid fa-triangle-exclamation text-4xl text-red-400";
+            document.getElementById('emptyStateTitle').textContent = "Error de conexión";
+            document.getElementById('emptyStateDesc').textContent = "No pudimos obtener la lista de proyectos. Verifica tu conexión.";
+            document.getElementById('retryButton').classList.remove('hidden');
+            emptyState.classList.remove('hidden');
+            emptyState.classList.add('flex');
+        }
+
+        window.addEventListener('DOMContentLoaded', fetchProyectos);
+    </script>
+</body>
+</html>
