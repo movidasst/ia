@@ -276,7 +276,7 @@
             try {
                 const url = new URL(urlString);
                 const hostname = url.hostname.toLowerCase();
-                const dominiosPermitidos = ['gemini.google.com', 'notebooklm.google.com', 'github.com', 'movidasst.com'];
+                const dominiosPermitidos = ['gemini.google.com', 'notebooklm.google.com','providencia.pro' 'github.com', 'movidasst.com'];
                 return dominiosPermitidos.some(domain => hostname === domain || hostname.endsWith('.' + domain));
             } catch (e) { return false; }
         }
